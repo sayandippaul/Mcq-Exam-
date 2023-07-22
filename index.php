@@ -1,0 +1,384 @@
+<?php 
+session_start();
+ob_start();
+?> 
+<!doctype html>
+<html lang="en">
+  <head>
+     
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Mcq Demo Exam</title>
+  </head>
+  <body style="background-image: url('back.img');background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;">
+    
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(142, 226, 226);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Test</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" >PCM-1</a>
+              </li>
+              <!-- <li class="nav-item">
+                 <a class="nav-link" href="#">Link</a> 
+              </li> -->
+              <li class="nav-item dropdown">
+                <!--<a style="background-color:black;color:white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+                <!--  Rules And Regulation-->
+                <!--</a>-->
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"><strong> correct answer:</strong> +4</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>wrong answer:</strong>-1</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>no answer:</strong>0</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>total marks:</strong>300</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>red:</strong>seen but not answered</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>green:</strong>answered</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>white:</strong>not seen</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>maths:</strong>25 questions</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>physics:</strong>25 questions</a></li>
+                  <li><a class="dropdown-item" href="#"><strong>chemistry:</strong>25 questions</a></li>
+
+
+
+
+
+
+
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><strong> total time:</strong>3 hours</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <!--<a onclick="toggle(2)" style="background-color:black;color:white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+                <!--  syllabus-->
+                <!--</a>-->
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"> <strong>maths:</strong> ap,gp,quadratic equation,trigonometry compound angle</a></li>
+                  <li><a class="dropdown-item" href="#"> <strong>physics:</strong> unit and measurement,error,vector,motion,force</a></li>
+                  <li><a class="dropdown-item" href="#"> <strong>chemistry:</strong>redox reaction,mole concept,organic-nomenclature</a></li>
+
+
+
+
+
+
+
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">All The Best</a></li>
+                </ul>
+              </li>
+              
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+            <form class="d-flex">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <button  style="background-color: #66ff99;" type="button">75 questions, 3 hours</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+
+    
+    
+      <div style="background: none;color: azure;" class="card">
+        <div class="card-header">
+          <strong>Hey user.</strong> 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">follow the instructions.</h5>
+         <strong> <p class="card-text">1)At First Read the rules and regulation and read the syllabus preperly.</p>
+          <p class="card-text">2)a timer will automatically run at the corner of screen.after the time test will be auto submitted.</p>
+          <p class="card-text">3)don't reload the screen.</p></strong>
+
+
+          <button type="button"style="margin-top:30px" id=reg class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Register for exams
+          </button>
+        
+        </div>
+      </div>
+ 
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">register yourself</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+        
+        <form role="form" method="post" class="row g-3" >
+
+            <div class="col-md-6">
+              <label for="inputEmail4"  class="form-label">Name</label>
+              <input type="text"name="user " Required id="name" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" name="password" class="form-label">Password</label>
+              <input type="text" Required class="form-control" id="password" id="inputPassword4">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">choose combination</label>
+              <select id="inputState" Required class="form-select">
+                <option value="" selected>subject combination</option>
+                <option value="PCM">PCM</option>
+                <option value="PCMB">PCMB</option>
+                <option value="PCB">PCB</option>
+                <option value="PM">PM</option>
+                <option value="PHYSICS">PHYSICS</option>
+                <option value="MATH">MATH</option>
+                <option value="CHEMISTRY">CHEMISTRY</option>
+
+
+
+              </select>
+              
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Phone Number</label>
+                <input type="text" Required name="phone" onblur="phone1()" id="phone" class="form-control" id="inputPassword4">
+              </div>
+              <label for="">enter your image</label>
+              <div class="input-group mb-3">
+                <input type="file" Required class="form-control"  id="inputGroupFile02">
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+              </div>
+              
+            <div class="col-12">
+              <button  id="send" name="send" onclick="event.preventDefault();sendotp()" class="btn btn-primary">Register For Exam</button>
+       <!--<input type="submit" value="Sign in" id="but" name="submit" class="btn btn-primary"/> -->
+
+            </div>
+            
+            
+      
+          
+    <!--<div class="modal-footer">-->
+    <!--   <button onclick="event.preventDefault();ver()">verify</button> -->
+    <!--  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>-->
+      
+    <!--   <button  name="submit1"   class="btn btn-primary" >Register</button> -->
+    <!--   <input type="submit" value="Sign in" id="but" name="submit" class="btn btn-primary"/> -->
+
+      
+    <!--</div>-->
+  </form>
+
+       
+      </div>
+    </div>
+  </div>
+  
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> 
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+  </body>
+  <script>
+          // var a=document.getElementById("show");
+          // document.getElementById("but").value="register";
+
+        //   a.style.display="none";
+
+      function send1(){
+        //   a.style.visibility="visible";
+          // a.style.display="block";
+          var b=document.getElementById("send").disabled="true";
+        //   a.disabled="true";
+         
+
+      }
+      var name,texam;
+      function sendotp(){
+          
+        var a=document.getElementById("name").value;
+        var n=a.length
+        var a1=document.getElementById("phone").value;
+        var n4=a1.length
+        
+         var b=document.getElementById("password").value;
+        var n1=b.length;
+        var n2=document.getElementById("inputState").value;
+        var n3=n2.length;
+       
+        // alert(n)
+        // alert(a[0])
+        if(n==0 || n1==0 || n3==0 || n4==0)
+        {
+            alert("enter valid details")
+        }
+        else{
+            
+
+        //alert("Hii");
+         name=document.getElementById("name").value;
+         
+        var password=document.getElementById("password").value;
+        var phone=document.getElementById("phone").value;
+        // var x = document.getElementById("mySelect").value;
+        //  texam=document.getElementById("texam").value;
+       texam = document.getElementById("inputState").value;
+// alert(x);
+        
+// alert(name);
+prob();
+        // var name=
+        // img();
+        // handleFileSelect(evt);
+    localStorage.setItem("password",password);
+
+        // var name=
+    localStorage.setItem("phone",phone);
+    var imagename=document.getElementById("inputGroupFile02").value;
+
+    localStorage.setItem("imagename",imagename);
+
+
+        // a.style.display="block";
+          var b=document.getElementById("send").disabled="true";
+        
+        var formData = new FormData();
+        formData.append("name", name);
+        formData.append("number", phone);
+        
+
+        
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+        //   alert(this.responseText);
+          }
+        xhttp.open("POST", "send_otp.php", true);
+        xhttp.send(formData);
+        // window.location("result.html");
+        // window.location.assign("https://sandyexam.000webhostapp.com/firstpagever.php")
+        alert("Registration Successful.Get Ready For Exam.");
+    window.location.assign("https://sandyexam.000webhostapp.com/mainpage.php")
+    
+        }
+      }
+       function prob(){
+        localStorage.setItem("name1",name);
+        localStorage.setItem("texam",texam);
+        // alert(texam);
+
+var name2=localStorage.getItem("name1");
+// alert(name2);
+// alert(name);
+       }
+
+
+        var imagesObject = [];
+
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = function(e) {
+          displayImgData(e.target.result)
+          addImage(e.target.result);
+      };
+
+      reader.readAsDataURL(f);
+    }
+}
+
+function loadFromLocalStorage(){
+  var images = JSON.parse(localStorage.getItem("images"))
+
+  if(images && images.length > 0){
+    imagesObject = images;
+    
+    // displayNumberOfImgs();
+    images.forEach(displayImgData);
+  }
+}
+
+function addImage(imgData){
+  imagesObject.push(imgData);
+  // displayNumberOfImgs();
+  localStorage.setItem("images", JSON.stringify(imagesObject));
+}
+
+function displayImgData(imgData){
+  var span = document.createElement('span');
+  span.innerHTML = '<img class="thumb" src="' + imgData + '"/>';
+  // document.getElementById('list').insertBefore(span, null);
+}
+
+// function displayNumberOfImgs(){
+//   if(imagesObject.length > 0){
+
+//     document.getElementById("state").innerHTML = imagesObject.length + " image" + ((imagesObject.length > 1) ? "s" : "") + " stored in your browser";
+    
+//     document.getElementById("deleteImgs").style.display = "inline";
+    
+//   } else {
+//     document.getElementById("state").innerHTML = "No images stored in your browser.";
+//     document.getElementById("deleteImgs").style.display = "none";
+//   }
+  
+  
+// }
+
+
+document.getElementById('inputGroupFile02').addEventListener('change', handleFileSelect, false);
+// document.getElementById('deleteImgs').addEventListener("click", deleteImages);
+loadFromLocalStorage();
+ function phone1() {
+
+        var a=document.getElementById("phone").value;
+        var n=a.length;
+        // alert(n)
+        // alert(a[0])
+        if(n!=10 || a[0]==1 || a[0]==3 || a[0]==4 || a[0]==0|| a[0]==4|| a[0]==5)
+        {
+            alert("enter valid number")
+        }
+        else{
+                // count1++;
+            }
+            
+    }
+   
+       
+      </script>
+        
+
+ 
+ 
+
+ 
+</html>
